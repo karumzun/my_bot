@@ -19,5 +19,6 @@ async def pin(message: types.Message):
 
 
 
+
 def register_handler_admin(dp: Dispatcher):
     dp.register_message_handler(pin, commands=['pin'], commands_prefix='!/')
