@@ -2,6 +2,7 @@ import random
 
 from aiogram import types, Dispatcher
 from config import bot, dp, ADMINS
+from database.bot_db import full_description
 
 
 async def game(message: types.Message):
@@ -14,6 +15,9 @@ async def game(message: types.Message):
         if message.text.startswith('game'):
 
                 await bot.send_dice(message.chat.id, emoji=random_emoji)
+        else:
+
+            await full_description(message)
 
 
 

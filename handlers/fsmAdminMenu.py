@@ -5,6 +5,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from config import bot, ADMINS
 from keyboards.client_cb import cancel_markup
 from database import bot_db
+from database.bot_db import sql_create
 
 
 class FSMAdmin(StatesGroup):
@@ -64,6 +65,8 @@ async def cancel_registration(message: types.Message, state: FSMContext):
     current_state = await state.get_state()
     if current_state is not None:
         await state.finish()
+
+
 
 
 
